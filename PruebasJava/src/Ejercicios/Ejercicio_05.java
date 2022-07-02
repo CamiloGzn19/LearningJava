@@ -28,6 +28,5 @@ public class Ejercicio_05 {
 
         System.out.println("Su nota final es: " + resultado);
 
-
     }
 }
