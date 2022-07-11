@@ -1,0 +1,76 @@
+Clase > Class
+public (modificador de acceso)
+Coche (Singular y primera en Mayúscula)
+
+public class Coche {
+    Aquí van los atributos y métodos
+}
+
+Coche > nombre de la clase
+coche1 > nombre de objeto
+new > para crear objetos
+
+Coche coche1 = new Coche();
+Coche coche2 = new Coche();
+
+Se pueden crear los que yo quiera
+
+Paquete > Es un conjunto de clases
+
+------------------------------------------------------
+MÉTODOS
+public (modificador de acceso)
+void (valor de retorno) > El tipo de dato que retorna
+método (nombre del método)
+() argumentos
+
+public void metodo () {
+	---
+	---
+	---
+}
+
+------------------------------------------------------
+Parámetro = declaración de variable o de objeto
+Argumento = es un valor que se envia
+
+Declaración del método
+
+public void método ( parámetro: Int a, String b ) {
+	--- argumento ---
+}
+
+
+objeto.método(1,"Hola"); Acá es un argumento;
+
+
+------------------------------------------------------
+Métodos: Retorno de valores
+
+public int sumar(int a, int b){
+    int suma = a + b;
+    return suma;
+}
+
+int suma = objeto.sumar(5,4);
+
+Como retorna un entero lo tengo que almacenar en una variable igual
+Se cambia el void por el tipo de dato a retornar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+Metodo constructor
+Un constructor es un método especial de una clase que se 
+invoca siempre que se crea un objeto de esa clase.
+
+Cuando se crea un objeto
+> Se asigna memoria para el objeto
+> Se inicializan los atributos de ese objeto
+> Se invoca al constructor de la clase que puede ser uno entre varios
+
+Ex: 
+Persona p1 =  new Persona();
+new Persona() es el constructor (Método constructor)
+
+Características de los métodos constructor
+> Tienen el mismo nombre de la Clase.
+> No devuelve ningún valor.
+> Debe declararse como público.
+
+NO SE LE DEBE PONER VALOR DE RETORNO
