@@ -27,14 +27,13 @@ public class Principal {
         persona.add(entrenador);
         persona.add(medico);
 
-
-
+        menu();
     }
 
     public static void menu() {
         int opcion;
         do {
-            System.out.println("\t.:MENU:.");
+            System.out.println("\n\t.:MENU:.");
             System.out.println("1. Viaje de equipo");
             System.out.println("2. Entrenamiento");
             System.out.println("3. Partido de futbol");
@@ -46,17 +45,35 @@ public class Principal {
             opcion = entrada.nextInt();
 
             switch (opcion) {
-                case 1: // Viaje de equipo
+                case 1:
+                    System.out.println();
+                    // Viaje de equipo
+                    viajarEquipo();
                     break;
-                case 2: // Entrenamiento
+                case 2:
+                    System.out.println();
+                    // Entrenamiento
+                    entrenarEquipo();
                     break;
-                case 3: // Partido de futbol
+                case 3:
+                    System.out.println();
+                    // Partido de futbol
+                    partidoFutbol();
                     break;
-                case 4: // Planificar entrenamiento
+                case 4:
+                    System.out.println();
+                    // Planificar entrenamiento
+                    planificarEntrenamiento();
                     break;
-                case 5: // Entrevista
+                case 5:
+                    System.out.println();
+                    // Entrevista
+                    darEntrevista();
                     break;
-                case 6: // Curar lesión
+                case 6:
+                    System.out.println();
+                    // Curar lesión
+                    curarLesion();
                     break;
                 case 7: break;
                 default:
@@ -64,6 +81,45 @@ public class Principal {
             }
         } while (opcion != 7);
     }
+
+    public static void viajarEquipo() {
+        for (Persona equipo: persona) {
+            System.out.print(equipo.getNombre()+" "+ equipo.getApellidos()+" -> ");
+            equipo.viajar();
+        }
+    }
+
+    public static void entrenarEquipo() {
+        for (Persona equipo: persona) {
+            System.out.print(equipo.getNombre()+" "+ equipo.getApellidos()+" -> ");
+            equipo.entrenamiento();
+        }
+    }
+
+   public static void partidoFutbol() {
+       for (Persona equipo: persona) {
+           System.out.print(equipo.getNombre()+" "+ equipo.getApellidos()+" -> ");
+           equipo.partidoFutbol();
+       }
+   }
+
+   public static void planificarEntrenamiento() {
+       System.out.print(entrenador.getNombre()+" "+entrenador.getApellidos()+" -> ");
+       ((Entrenador)entrenador).planificarEntrenamiento();
+   }
+
+   public static void darEntrevista() {
+       System.out.print(futbolista1.getNombre()+" "+futbolista1.getApellidos()+" -> ");
+       ((Futbolista)futbolista1).entrevista();
+       System.out.print(futbolista2.getNombre()+" "+futbolista2.getApellidos()+" -> ");
+       ((Futbolista)futbolista2).entrevista();
+   }
+
+   public static void curarLesion() {
+       System.out.print(medico.getNombre()+" "+medico.getApellidos()+" -> ");
+       ((Medico)medico).curarLesion();
+   }
+
 
 }
 
