@@ -48,9 +48,10 @@ public class Principal {
     }
 
     public static void menu() {
-        String nombreAeropuerto;
+        String nombreAeropuerto, nombreCompañia;
         int opcion;
         Aeropuerto aeropuerto;
+        Compañia compañia;
 
         do {
             System.out.println("\t.:MENU:.");
@@ -84,7 +85,19 @@ public class Principal {
                     }
                     break;
                 case 4: // Lista de vuelos por compañia
-                    System.out.println();
+                    entrada.nextLine();
+                    System.out.println("\nDigite el nombre del aeropuerto");
+                    nombreAeropuerto = entrada.nextLine();
+                    aeropuerto = buscarAeropuerto(nombreAeropuerto, aeropuertos);
+                    if(aeropuerto == null) {
+                        System.out.println("El aeropuerto no existe");
+                    } else {
+                        System.out.println("Digite el nombre de la compañia");
+                        nombreCompañia = entrada.nextLine();
+                        compañia = aeropuerto.getCompañia(nombreCompañia);
+                        mostrarVuelos(compañia);
+                    }
+
 
                     break;
                 case 5: // Listar posibles vuelos de origen a destino
@@ -158,5 +171,18 @@ public class Principal {
         for(int i=0;i< aeropuerto.getNumCompañia();i++){
             System.out.println(aeropuerto.getCompañia(i).getNombre());
         }
+    }
+
+    public static void mostrarVuelos(Compañia compañia) {
+        Vuelo vuelo;
+        System.out.println("Los vuelos de la compañia: " +compañia.getNombre());
+    for(int i=0;i< compañia.getNumVuelo();i++){
+        vuelo = compañia.getVuelo(i);
+        System.out.println("Identificador: "+vuelo.getIdentificador());
+        System.out.println("Ciudad origen: "+vuelo.getCiudadOrigen());
+        System.out.println("Ciudad destino: "+vuelo.getCiudadDestino());
+        System.out.println("Precio: "+vuelo.getPrecio());
+        System.out.println();
+    }
     }
 }
